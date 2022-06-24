@@ -11,9 +11,9 @@ isBigGang'::Int -> (Bool, String)
 isBigGang' n | n>5 = (True, "this is big gang")
              | otherwise = (False, "this is small gang")
 isBigGang''::Int -> WriterT (Bool, String) IO ()
-isBigGang'' n | n > 5 = do
+isBigGang'' n | n > 5 =
                   tell (True, "big gang")
-              | otherwise = do
+              | otherwise =
                   tell (False, "small gang")
 isBigGang'''::Int -> WriterT String IO Int
 isBigGang''' n | n > 5 = do
@@ -22,7 +22,7 @@ isBigGang''' n | n > 5 = do
                | otherwise = do
                    tell "how big is this gang? \n"
                    WriterT $ return (n, "Small Gang")
-myName::String -> ReaderT String IO (String)
+myName::String -> ReaderT String IO String
 myName step = do
   name <- ask
   return (step ++ ", I am " ++ name)
@@ -35,11 +35,11 @@ localExample = do
 
 someFunc :: IO ()
 someFunc = do
-  putStrLn $ show $ isBigGang 4
-  putStrLn $ show $ isBigGang' 5
+  print (isBigGang 4)
+  print (isBigGang' 5)
   (_, y) <- execWriterT $ isBigGang'' 7
   putStrLn y
   (_, y) <- runWriterT $ isBigGang''' 4
   putStrLn y
   output <- runReaderT localExample "Lim"
-  putStrLn $ show output
+  print output
