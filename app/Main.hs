@@ -1,6 +1,6 @@
 module Main where
 
-import Lib4
+import CustomMonad
 
 main :: IO ()
 main = someFunc

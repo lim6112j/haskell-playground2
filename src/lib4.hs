@@ -1,4 +1,4 @@
-module Lib4 where
+module Lib4 (someFunc) where
 
 type Stack = [Int]
 
