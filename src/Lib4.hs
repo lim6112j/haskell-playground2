@@ -61,12 +61,9 @@ stackyStack :: State Stack ()
 stackyStack =
   get
     >>= ( \x ->
-            State
-              ( \y ->
-                  if y == [1, 2, 3]
-                    then (runState $ put [1, 1, 1]) y
-                    else (runState $ put [4, 3, 1]) y
-              )
+            if x == [1, 2, 3]
+              then put [1, 1, 1]
+              else put [4, 3, 1]
         )
 
 --stackyStack = do
@@ -81,5 +78,5 @@ someFunc = do
   print (a, s)
   let (a, s) = runState stackStuff [9, 5, 2, 0, 1]
   print (a, s)
-  let val = runState stackyStack [1, 2, 3, 5]
+  let val = runState stackyStack [1, 2, 3]
   print val
