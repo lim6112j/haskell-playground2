@@ -30,6 +30,7 @@ library
       Lib
       Lib2
       Lib3
+      Lib4
   other-modules:
       Paths_playground
   hs-source-dirs:

@@ -24,7 +24,15 @@ dependencies:
 - transformers
 - mtl
 library:
-  source-dirs: src
+  source-dirs:
+    # - src/ch04
+    # - src/ch05
+    # - src/ch06
+    # - src/ch12
+    # - src/ch10
+    # - src/ch18
+    # - src/ch15
+    - src
 executables:
   playground-exe:
     main:                Main.hs
