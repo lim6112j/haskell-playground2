@@ -1,4 +1,4 @@
 packages:
 - .
 resolver:
-  compiler: ghc-8.10.7
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/19/23.yaml

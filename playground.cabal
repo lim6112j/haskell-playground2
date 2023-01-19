@@ -31,6 +31,7 @@ library
       Lib2
       Lib3
       Lib4
+      Lib5
   other-modules:
       Paths_playground
   hs-source-dirs:
@@ -38,6 +39,7 @@ library
   build-depends:
       base >=4.7 && <5
     , mtl
+    , text-show
     , transformers
   default-language: Haskell2010
 
@@ -52,6 +54,7 @@ executable playground-exe
       base >=4.7 && <5
     , mtl
     , playground
+    , text-show
     , transformers
   default-language: Haskell2010
 
@@ -67,5 +70,6 @@ test-suite playground-test
       base >=4.7 && <5
     , mtl
     , playground
+    , text-show
     , transformers
   default-language: Haskell2010
